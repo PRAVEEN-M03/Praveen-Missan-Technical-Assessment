@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Leave Request</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="app-card">
+      <div class="header">
+        <div class="brand-mark">EL</div>
+        <div>
+          <p class="eyebrow">Employee Services</p>
+          <h1>Leave Request</h1>
+          <p class="subtitle">Submit a leave request and receive an instant decision.</p>
+        </div>
+      </div>
+
+      <form id="leaveForm" novalidate>
+        <div class="form-grid">
+          <div class="field field-full">
+            <label for="employeeName">Employee Name</label>
+            <input id="employeeName" name="employeeName" type="text" placeholder="e.g. Arun Kumar" autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="employeeId">Employee ID</label>
+            <input id="employeeId" name="employeeId" type="text" placeholder="e.g. EMP001">
+          </div>
+
+          <div class="field">
+            <label for="leaveType">Leave Type</label>
+            <select id="leaveType" name="leaveType">
+              <option value="">Select leave type</option>
+              <option value="Annual Leave">Annual Leave</option>
+              <option value="Sick Leave">Sick Leave</option>
+              <option value="Emergency Leave">Emergency Leave</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="availableLeaveBalance">Available Leave Balance</label>
+            <input id="availableLeaveBalance" name="availableLeaveBalance" type="number" min="0" step="0.5" placeholder="e.g. 5">
+          </div>
+
+          <div class="field">
+            <label for="requestedDays">Number of Days Requested</label>
+            <input id="requestedDays" name="requestedDays" type="number" min="0.5" step="0.5" placeholder="e.g. 3">
+          </div>
+        </div>
+
+        <button id="submitButton" type="submit">
+          <span>Submit Leave Request</span>
+        </button>
+      </form>
+
+      <section id="result" class="result hidden" aria-live="polite">
+        <div class="result-icon" id="resultIcon"></div>
+        <div>
+          <p class="result-label" id="resultLabel"></p>
+          <h2 id="resultTitle"></h2>
+          <p id="resultMessage"></p>
+        </div>
+      </section>
+    </section>
+
+    <p class="footer-note"> Employee Leave Request Application  </p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
